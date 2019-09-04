@@ -4,28 +4,21 @@ phases:
  install:
    runtime-versions:
      java: openjdk8
-    commands:
-      - apt-get update -y
-      - apt-get install -y maven
-    finally:
-      - echo This always runs even if the update or install command fails 
+   commands:
+   - apt-get update -y
+   - apt-get install -y 
+   - apt-get install -y maven
  pre_build:
-    commands:
-      - echo Entered the pre_build phase...
-    finally:
-      - echo This always runs even if the login command fails 
+  commands:
+  - echo Entered the pre_build phase...
  build:
-    commands:
-      - echo Entered the build phase...
-      - mvn install
-    finally:
-      - echo This always runs even if the install command fails
+   commands:
+   - echo Entered the build phase...
+   - mvn install
  post_build:
     commands:
       - echo Entered the post_build phase...
       - echo Build completed on `date`
 
-artifacts:
-  files:
-   - target/*.jar`
+
      
