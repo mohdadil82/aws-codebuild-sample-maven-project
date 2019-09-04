@@ -3,10 +3,10 @@ version: 0.2
 phases:
  install:
    runtime-versions:
-     java: corretto8
+     java: openjdk8
     commands:
-      - yum -y update
-      - yum install maven -y
+      - apt-get update -y
+      - apt-get install -y maven
     finally:
       - echo This always runs even if the update or install command fails 
  pre_build:
@@ -24,4 +24,8 @@ phases:
     commands:
       - echo Entered the post_build phase...
       - echo Build completed on `date`
+
+artifacts:
+  files:
+   - target/*.jar`
      
