@@ -7,9 +7,6 @@ phases:
     commands:
       - java -version
       - echo Entered the install phase...
-      - apt-get update -y
-      - apt-get install openjdk8
-      - apt-get install -y maven
     finally:
       - echo This always runs even if the update or install command fails 
   pre_build:
